@@ -1,4 +1,4 @@
-const { response } = require('./app');
+
 const User =require('./model');
 
   const getUsers = (req, res, next) => {
@@ -8,7 +8,7 @@ const User =require('./model');
         })
         .catch(error => {
             res.json({error})
-        })
+        });
 
   };
 
@@ -50,7 +50,7 @@ const User =require('./model');
   }
 
 
-  exports.getUsers = getUsers;
+  exports.getUsers = getUsers
   exports.addUser = addUser;
   exports.updateUser = updateUser;
   exports.deleteUser = deleteUser;

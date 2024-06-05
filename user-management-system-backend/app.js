@@ -20,12 +20,26 @@ app.get('/users',(req, res) => {
     });
 });
 
-app.get('/user', (req, res) => {
+app.post('/createuser', (req, res) => {
     
     controller.addUser(req.body,(callback) => {
         res.send();
     });
 });
 
+
+app.post('/updateuser', (req, res) => {
+    
+    controller.updateUser(req.body,(callback) => {
+        res.send(callback);
+    });
+});
+
+app.post('/deleteuser', (req, res) => {
+    
+    controller.deleteUser(req.body,(callback)=> {
+        res.send(callback);
+    });
+});
 
 module.exports=app;
