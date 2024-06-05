@@ -21,9 +21,9 @@ app.get('/users',(req, res) => {
 });
 
 app.get('/user', (req, res) => {
-    const id = req.query.id;
-    controller.getUserById(id, user => {
-        res.send(user);
+    
+    controller.addUser(req.body,(callback) => {
+        res.send();
     });
 });
 
